@@ -1,10 +1,16 @@
 import React from 'react'
 import "./_card.css"
-import Logo from '../../../assets/logo.png'
+import {getMovieDetails} from '../../../actions/movies'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 
 const Card = ({Title, Poster, Year, imdbID}) => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
     const handleMovieDetails = () => {
         console.log('imdbID ---- ',imdbID)
+        dispatch(getMovieDetails(imdbID))
+        navigate(`/details/${imdbID}`)
     }
   return (
     <section className='card'>

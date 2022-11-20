@@ -2,11 +2,14 @@ import {
   GET_MOVIE_DATA,
   GET_MOVIE_DATA_BY_PAGE,
   GET_MOVIE_DATA_BY_SEARCH,
+  GET_MOVIE_DETAILS,
+  SET_LOADING,
+  CLEAR_LOADING,
 } from '../actions/type.js';
 
 let initialValue = {
   movieData: [],
-  message: '',
+  loading: false,
   search: '',
   movieDetails: [],
 };
@@ -18,6 +21,7 @@ const movies = (state = initialValue, action) => {
         ...state,
         movieData: action.payload,
         search: action.search,
+        movieDetails: [],
       };
     case GET_MOVIE_DATA_BY_PAGE:
       return {
@@ -29,6 +33,21 @@ const movies = (state = initialValue, action) => {
         ...state,
         movieData: action.payload,
         search: action.search,
+      };
+    case GET_MOVIE_DETAILS:
+      return {
+        ...state,
+        movieDetails: action.payload,
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case CLEAR_LOADING:
+      return {
+        ...state,
+        loading: false,
       };
     default:
       return state;

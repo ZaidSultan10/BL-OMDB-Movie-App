@@ -12,23 +12,18 @@ const Categories = () => {
 
     const prevPage = () => {
         setCurrentPage(currentPage - 1)
-        // dispatch(getMovieDataByPage(currentPage, search))
+        dispatch(getMovieDataByPage(currentPage - 1, search))
     }
 
     const nextPage = () => {
         setCurrentPage(currentPage + 1)
-        // dispatch(getMovieDataByPage(currentPage, search))
+        dispatch(getMovieDataByPage(currentPage + 1, search))
     }
 
     useEffect(() => {
         setCurrentPage(1)
     }, [search])
 
-    useEffect(() => {
-        setTimeout(() => {
-            dispatch(getMovieDataByPage(currentPage, search))
-        },1500)
-    }, [currentPage])
   return (
     <section className='categories'>
         {

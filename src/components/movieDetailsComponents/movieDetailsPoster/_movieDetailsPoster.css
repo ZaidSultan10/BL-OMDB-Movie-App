@@ -1,0 +1,14 @@
+.movieDetailsPoster{
+    color: white;
+    border: 1px solid;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    background-size: cover;
+    height: 500px;
+}
+
+.movieDetailsPoster > img{
+    width: 100%;
+    height: 100%;
+}

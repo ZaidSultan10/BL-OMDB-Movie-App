@@ -1,0 +1,81 @@
+.movieDetailsData{
+    color: white;
+    padding: 1rem;
+    /* border: 1px solid; */
+    border-radius: 8px;
+    margin-left: 8px;
+    height: 500px;
+}
+.movieDetailsData__heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.movieDetailsData__duration{
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 10px;
+    color: rgba(223, 223, 223, 0.804);
+}
+
+.movieDetailsData__duration > h3{
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.movieDetailsData__overview > h2{
+    font-size: 18px;
+    margin-top: 0.5rem;
+}
+.movieDetailsData__overview > p{
+    font-size: 12px;
+    margin: 0.5rem 2px;
+    line-height: 1.2rem;
+    color: rgba(223, 223, 223, 0.804);
+}
+
+.movieDetailsData__starring, .movieDetailsData__director, .movieDetailsData__genre{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.movieDetailsData__starring__actors, .movieDetailsData__director__list, .movieDetailsData__genre__list{
+    margin-left: 1rem;
+    display: flex;
+}
+
+.movieDetailsData__starring__name, .movieDetailsData__director__name, .movieDetailsData__genre__name{
+    border: 1px solid;
+    padding: 0.3rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+}
+
+.movieDetailsData__starring__name > p, .movieDetailsData__director__name > p, .movieDetailsData__genre__name > p{
+    font-size: 11px;
+}
+
+.movieDetailsData__ratingHeading { 
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+.movieDetailsData__ratings{
+    display: grid;
+    grid-template-columns: 4fr 2fr 4fr;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.movieDetailsData__ratings > p {
+    font-size: 12px;
+    margin-right: 1rem;
+}
+.movieDetailsData__ratings__value{
+    border: 1px solid white;
+    padding: 0.3rem;
+    width: auto;
+    border-radius: 4px;
+    text-align: center;
+}
