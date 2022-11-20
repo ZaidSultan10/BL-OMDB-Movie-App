@@ -2,7 +2,7 @@
     margin: 0 auto;
     width: 100%;
     /* border: 1px solid; */
-    box-shadow: rgba(225, 224, 224, 0.914) 0px 1px 8px;
+    /* box-shadow: rgba(225, 224, 224, 0.914) 0px 1px 8px; */
 }
 
 .header__container{
@@ -19,7 +19,7 @@
 }
 
 .header__container__left > img {
-    filter: drop-shadow(0 0 0.75rem white);
+    filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.7));
     width: 120px;
     height: 50px;
     background-color: unset;
@@ -42,6 +42,7 @@
     filter: drop-shadow(0 0 0.75rem white);
     width: 300px;
     height: 30px;
+    color: white;
     /* box-shadow:rgb(255, 255, 255) 0px 50px 100px -20px, rgba(215, 215, 215, 0.637) 0px 30px 60px -30px, rgba(245, 246, 247, 0.944) 0px -2px 6px 0px inset; */
 }
 .header__container__right{
@@ -51,6 +52,6 @@
 }
 .header__container__right__bell, .header__container__right__message{
     color: rgba(255, 255, 255, 0.542) !important;
-    font-size: 24px;
+    font-size: 26px;
     margin: 0 10px;
 }

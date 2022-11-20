@@ -3,13 +3,18 @@ import './_header.css'
 import Logo from '../../assets/logo.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faBell, faCommentDots } from '@fortawesome/free-regular-svg-icons'
+import { useDispatch } from 'react-redux'
+import {getMovieDataBySearch} from '../../actions/movies'
 
 const Header = () => {
 
     const [searchValue, setSearchValue] = useState('')
+    const dispatch = useDispatch()
 
     const handleChange = (e) => {
-        setSearchValue(e.target.value)
+        setTimeout(() => {
+            dispatch(getMovieDataBySearch(e.target.value))
+        },2000)
     }
 
   return (
@@ -19,7 +24,10 @@ const Header = () => {
                 <img src={Logo} alt='logo' />
             </div>
             <div className='header__container__center'>
-                <input placeholder='Search...' name='search' onChange={handleChange} value={searchValue} className='header__container__center__search' />
+                <input placeholder='Search...' name='search' onChange={(e) => {
+                    handleChange(e);
+                    setSearchValue(e.target.value)
+                    }} value={searchValue} className='header__container__center__search' />
             </div>
             <div className='header__container__right'>
                 <FontAwesomeIcon className='header__container__right__bell' icon={faBell} />

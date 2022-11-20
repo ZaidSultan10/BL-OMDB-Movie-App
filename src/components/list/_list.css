@@ -1,0 +1,17 @@
+.list{
+    color: white;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.list__type__movies, .list__type__series{
+    margin: 0.5rem auto;
+    font-size: 24px;
+}
+
+.list__movies, .list__series { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap:2px;
+    margin: 0.5rem auto;
+}
