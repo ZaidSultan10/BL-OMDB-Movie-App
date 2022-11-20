@@ -8,7 +8,6 @@ const Card = ({Title, Poster, Year, imdbID}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const handleMovieDetails = () => {
-        console.log('imdbID ---- ',imdbID)
         dispatch(getMovieDetails(imdbID))
         navigate(`/details/${imdbID}`)
     }

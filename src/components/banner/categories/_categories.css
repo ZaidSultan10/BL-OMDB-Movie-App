@@ -4,8 +4,16 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100%;
     font-style: italic;
+    height: 300px !important;
+    width: 30%;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.592);
+    border-radius: 4px;
+    filter: drop-shadow(0 0 0.45rem rgba(255, 255, 255, 0.552));
+    color: white;
 }
 
 .categories__next{

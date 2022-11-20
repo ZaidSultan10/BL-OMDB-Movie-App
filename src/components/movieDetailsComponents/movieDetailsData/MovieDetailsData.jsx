@@ -1,18 +1,19 @@
 import React from 'react'
 import './_movieDetailsData.css'
-import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import Loader from '../../loader/Loader';
 
 const MovieDetailsData = ({details, loading}) => {
   return (
     <React.Fragment>
         {
             loading ? (
-                <SkeletonTheme color="grey" highlightColor="#444">
-                    <section>
-                        <Skeleton height={30} width={350} count={8} style={{margin:'1rem 4px'}} />
-                    </section>
-                </SkeletonTheme>
+                <Loader
+                height={30} 
+                skeletonWidth={350}
+                count={8}
+                skeletonMargin={'1rem 4px'}
+                array={1} 
+                 />
             ) : (
                 <section className='movieDetailsData'>
                     <div className='movieDetailsData__heading'>

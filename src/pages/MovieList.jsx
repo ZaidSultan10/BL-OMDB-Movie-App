@@ -4,6 +4,7 @@ import Header from '../components/header/Header'
 import { useDispatch } from 'react-redux'
 import { getMovieData } from '../actions/movies'
 import List from '../components/list/List'
+import Categories from '../components/banner/categories/Categories'
 
 const MovieList = () => {
     const dispatch = useDispatch()
@@ -14,7 +15,10 @@ const MovieList = () => {
   return (
     <main>
         <Header />
-        <Banner />
+        <div className='movieList__banner' style={{display:'flex',justifyContent:'space-between', alignItems:'center'}}>
+            <Banner />
+            <Categories />
+        </div>
         <List />
     </main>
   )

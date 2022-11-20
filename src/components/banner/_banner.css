@@ -3,12 +3,15 @@
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+    width: 70%;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .slick-slider{
     height: 300px !important;
-    width: 70%;
-    margin: 0 1rem;
+    width: 100%;
     border: 3px solid rgba(255, 255, 255, 0.592);
     border-radius: 4px;
     filter: drop-shadow(0 0 0.45rem rgba(255, 255, 255, 0.552));
@@ -41,11 +44,11 @@
     z-index: 2 !important;
 }
 
-.banner__category{
+/* .banner__category{
     height: 300px !important;
     width: 30%;
     margin: 0 1rem;
     border: 3px solid rgba(255, 255, 255, 0.592);
     border-radius: 4px;
     filter: drop-shadow(0 0 0.45rem rgba(255, 255, 255, 0.552));
-}
+} */

@@ -3,9 +3,11 @@ import './_banner.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Logo from '../../assets/logo.png'
-import Categories from './categories/Categories';
+// import Categories from './categories/Categories';
 import { useSelector } from 'react-redux';
+import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import Loader from '../loader/Loader';
 
 const Banner = () => {
 
@@ -20,28 +22,45 @@ const Banner = () => {
         autoplaySpeed: 4000,
         cssEase: "linear"
       };
-    const {movieData} = useSelector(state => state?.movies)
+    const {movieData,loading} = useSelector(state => state?.movies)
     return (
-      <section className='banner'>
-        <Slider {...settings}>
-          {
-            movieData && movieData.Search && movieData.Search.length ? (
-                movieData.Search.map(({Poster, Title}, i) => (
-                    <div className='sample'>
-                        <img src={Poster} alt={`${Title}`} />
-                    </div>
-                ))
-            ) : (
-                <div className='sample'>
-                    <p style={{color:'white'}}>{movieData && movieData.Error ? movieData.Error : `No results found`}</p>
-                </div>
+      <React.Fragment>
+        {
+            loading ? (
+                <Loader 
+                height={300} 
+                skeletonWidth={730} 
+                skeletonMargin={'0 1rem'} 
+                display={'flex'} 
+                alignItems={'center'}
+                width={'100%'}
+                margin={'0 auto'}
+                array={1} />
+            ) : 
+            (
+                <section className='banner'>
+                    <Slider {...settings}>
+                    {
+                        movieData && movieData.Search && movieData.Search.length ? (
+                            movieData.Search.map(({Poster, Title}, i) => (
+                                <div className='sample'>
+                                    <img src={Poster} alt={`${Title}`} />
+                                </div>
+                            ))
+                        ) : (
+                            <div className='sample'>
+                                <p style={{color:'white'}}>{movieData && movieData.Error ? movieData.Error : `No results found`}</p>
+                            </div>
+                        )
+                    }
+                    </Slider>
+                    {/* <div className='banner__category'>
+                        <Categories />
+                    </div> */}
+                </section>
             )
-          }
-        </Slider>
-        <div className='banner__category'>
-            <Categories />
-        </div>
-      </section>
+        }
+      </React.Fragment>
     );
 }
 

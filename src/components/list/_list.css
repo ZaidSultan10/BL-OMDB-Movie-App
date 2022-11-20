@@ -4,12 +4,12 @@
     padding: 0 1rem;
 }
 
-.list__type__movies, .list__type__series{
+.list__type__movies, .list__type__series, .list__type__game{
     margin: 0.5rem auto;
     font-size: 24px;
 }
 
-.list__movies, .list__series { 
+.list__movies, .list__series, .list__games { 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap:2px;
